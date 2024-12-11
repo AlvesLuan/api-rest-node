@@ -1,6 +1,7 @@
 port = 3003;
 
 const express = require('express');
+const bd = require('./bancoDeDados')
 
 const app = express();
 
@@ -12,7 +13,7 @@ app.listen(port, ()=>{
 })
 
 app.get('/items', (request, response, next) =>{
-    response.send("Lista de Items!")
+    response.send(bd.listItems());
 
-    
+
 })
