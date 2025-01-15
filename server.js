@@ -12,8 +12,19 @@ app.listen(port, ()=>{
     /*console.log('Servidor Iniciado na porta: ',port); */
 })
 
+
 app.get('/items', (request, response, next) =>{
     response.send(bd.listItems());
+})
 
+
+app.post('/items',(request, response, next) =>{
+
+    const item = bd.createItem({
+        nome: request.body.nome,
+        valor: request.body.valor
+    })
+
+    response.send("posted")
 
 })
