@@ -21,4 +21,8 @@ function createItem(item){
     return item;
 }
 
-module.exports = {listItems, createItem};
+function getItem(id){
+    return items[id];
+}
+
+module.exports = {listItems, createItem, getItem};
