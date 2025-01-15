@@ -17,6 +17,10 @@ app.get('/items', (request, response, next) =>{
     response.send(bd.listItems());
 })
 
+app.get('/items/:id', (request, response, next) =>{
+    response.send(bd.getItem(request.params.id));
+})
+
 
 app.post('/items',(request, response, next) =>{
 
